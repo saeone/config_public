@@ -1,0 +1,11 @@
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+export PATH="$HOME/.local/bin:$PATH"
